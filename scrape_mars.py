@@ -5,6 +5,7 @@
 
 
 # import dependencies
+import os
 from splinter import Browser
 from bs4 import BeautifulSoup as bs
 import pandas as pd
@@ -19,6 +20,7 @@ def init_browser():
     # use splinter to start Chromedriver
     executable_path = {'executable_path': '/usr/local/bin/chromedriver'}
     return Browser('chrome', **executable_path, headless=False)
+init_browser()
 
 
 # In[5]:
