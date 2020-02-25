@@ -5,7 +5,6 @@
 
 
 # import dependencies
-import os
 from splinter import Browser
 from bs4 import BeautifulSoup as bs
 import pandas as pd
@@ -94,7 +93,7 @@ def scrape_hemispheres():
     results = soup.find_all("div", class_="description")
     
     for results in results:
-        hemispheres.append(resulth3.text)
+        hemispheres.append(result.h3.text)
         
     #hemispheres = ['Cerberus', 'Schiaparelli', 'Syrtis Major', 'Valles Marineris']
     return hemispheres
@@ -112,7 +111,7 @@ def scrape_hemisphere_info():
     url = 'https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars'
     browser.visit(url)
     
-    for hemi in hemisphere:
+    for hemi in hemispheres:
         # hemisphere
         browser.click_link_by_partial_text(f'{hemi}')
         
