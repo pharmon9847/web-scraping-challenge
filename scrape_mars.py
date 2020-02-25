@@ -75,7 +75,7 @@ def scrape_latest_tweet():
 def scrape_mars_facts():
     url = 'http://space-facts.com/mars/'
     # use pandas 'read_html' to parse the url
-    tables = pr.read_html(url)
+    tables = pd.read_html(url)
     df = tables[0]
     df.columns = ['description', 'value']
     df.set_index('description', inplace=True)
