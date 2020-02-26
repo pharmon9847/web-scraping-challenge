@@ -81,9 +81,6 @@ def scrape_mars_facts():
     return df.to_html()
 
 
-# In[9]:
-
-
 def scrape_hemispheres():
     url = 'https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target$v1=Mars'
     response = requests.get(url)
@@ -95,9 +92,8 @@ def scrape_hemispheres():
     for results in results:
         hemispheres.append(result.h3.text)
         
-    #hemispheres = ['Cerberus', 'Schiaparelli', 'Syrtis Major', 'Valles Marineris']
+    hemispheres = ['Cerberus', 'Schiaparelli', 'Syrtis Major', 'Valles Marineris']
     return hemispheres
-
 
 # In[10]:
 
@@ -130,7 +126,7 @@ def scrape_hemisphere_info():
         hemisphere_info.append(hemi_dict)
         
         # return to original page
-        browser.click_link_by_partial_text('Back')
+        browser.click_link_by_partial_text
         
     browser.quit()
     return hemisphere_info
@@ -147,7 +143,7 @@ def scrape():
     mars_facts["mars_weather"] = scrape_latest_tweet()
     mars_facts["mars_facts_table"] = scrape_mars_facts()
     mars_facts["hemisphere_info"] = scrape_hemisphere_info()
-    # return dictionary
+     # return dictionary
     return mars_facts
 
 
